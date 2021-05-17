@@ -17,7 +17,7 @@ pipeline{
         }
         stage("deploy the code to tomcat8"){
             steps{
-                tomcatdeploy('tomcat_dev','ec2-user,'172.31.51.152')
+                tomcatdeploy('tomcat_dev','ec2-user','172.31.51.152')
             }
         }
     }
