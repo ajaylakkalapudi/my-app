@@ -16,6 +16,7 @@ pipeline{
         }
         stage("deploy the code to tomcat8"){
             steps{
+                tomcatdeploy('tomcat_dev','ec2-user,'172.31.51.152''
                 sshagent(['tomcat_dev']){
                     //rename the war file
                     sh "mv target/*.war target/myweb.war"
