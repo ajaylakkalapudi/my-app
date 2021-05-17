@@ -17,16 +17,7 @@ pipeline{
         }
         stage("deploy the code to tomcat8"){
             steps{
-                tomcatdeploy('tomcat_dev','ec2-user,'172.31.51.152''
-                sshagent(['tomcat_dev']){
-                    //rename the war file
-                    sh "mv target/*.war target/myweb.war"
-                    //copy war file into tomcat server
-                    sh "scp -o StrictHostKeyChecking=no target/myweb.war ec2-user@172.31.51.152:/opt/tomcat8/webapps"
-                    //start and stop the tomcat8
-                    sh "ssh ec2-user@172.31.51.152 /opt/tomcat8/bin/shutdown.sh"
-                    sh "ssh ec2-user@172.31.51.152 /opt/tomcat8/bin/startup.sh"
-                }
+                tomcatdeploy('tomcat_dev','ec2-user,'172.31.51.152')
             }
         }
     }
