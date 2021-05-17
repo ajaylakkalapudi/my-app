@@ -1,4 +1,4 @@
-@Library('mysharedlibs') _
+@Library('pnkr5454_libs') _
 pipeline{
     agent any
     tools{
